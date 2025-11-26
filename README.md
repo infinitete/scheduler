@@ -29,8 +29,10 @@
 - 日程统计摘要
 - 点击日期快速创建日程
 
-![首页](screenshot/home-1.png)
-![首页日程详情](screenshot/home-2.png)
+<div style="display: flex; gap: 10px;">
+  <img src="screenshot/home-1.png" width="300" alt="首页">
+  <img src="screenshot/home-2.png" width="300" alt="首页日程详情">
+</div>
 
 ### 日程列表
 - 按优先级、状态、日期等多维度筛选
@@ -38,14 +40,14 @@
 - 日程项展示优先级标签和状态
 - 标记完成/未完成状态
 
-![日程列表](screenshot/list.png)
+<img src="screenshot/list.png" width="350" alt="日程列表">
 
 ### 日程详情
 - 查看日程详细信息
 - 编辑或删除日程
 - 切换日程状态
 
-![日程详情](screenshot/details.png)
+<img src="screenshot/details.png" width="350" alt="日程详情">
 
 ### 创建日程
 - 设置日程标题、描述、地点
@@ -53,7 +55,7 @@
 - 设置优先级
 - 地点选择（使用微信小程序API）
 
-![创建日程](screenshot/create.png)
+<img src="screenshot/create.png" width="350" alt="创建日程">
 
 ## 项目结构
 
