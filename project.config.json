@@ -1,0 +1,23 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "scheduler",
+  "description": "日程管理小程序",
+  "appid": "wx6f63bc90b290af8e",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "enhance": false,
+    "compileHotReLoad": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "选择日程地点时需要使用"
+    },
+    "scope.chooseLocation": {
+      "desc": "选择日程地点时需要使用"
+    }
+  }
+}

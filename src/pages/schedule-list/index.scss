@@ -1,0 +1,294 @@
+.schedule-list {
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding-bottom: 180px; // 添加底部边距，避免被 tabBar 遮挡
+  
+  &__header {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+  }
+  
+  &__search-container {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 0 24px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:active {
+      background: #f1f5f9;
+      transform: scale(0.98);
+    }
+  }
+  
+  &__search-input {
+    flex: 1;
+    font-size: 28px;
+    color: #334155;
+    background: transparent;
+    border: none;
+    
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+  
+  &__search-icon {
+    font-size: 32px;
+    color: #667eea;
+    margin-left: 16px;
+  }
+
+  &__clear-icon {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(239, 68, 68, 0.1);
+    
+    &:active {
+      background-color: rgba(239, 68, 68, 0.2);
+    }
+  }
+
+  &__advanced-filters {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  &__filter-card {
+    flex: 1;
+    background: #f1f5f9;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:active {
+      background: #e2e8f0;
+      transform: scale(0.98);
+    }
+  }
+
+  &__filter-label {
+    font-size: 24px;
+    color: #64748b;
+    margin-bottom: 12px;
+  }
+
+  &__filter-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+    transition: all 0.3s;
+    margin-bottom: 30px; // 使用 margin-bottom 增加日程项之间的间距
+    
+    &:last-child {
+      margin-bottom: 0; // 最后一个元素不需要底部边距
+    }
+    
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+    }
+    
+    &--completed {
+      opacity: 0.7;
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__item-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1e293b;
+    flex: 1;
+    
+    &--completed {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+  }
+
+  &__item-priority {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 16px;
+    margin-left: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    
+    &--1 { // 低优先级
+      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      color: #fff;
+    }
+    
+    &--2 { // 中优先级
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+      color: #fff;
+    }
+    
+    &--3 { // 高优先级
+      background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+      color: #fff;
+    }
+  }
+
+  &__item-time,
+  &__item-desc,
+  &__item-location {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    color: #64748b;
+    margin-bottom: 16px;
+    
+    .icon {
+      margin-right: 16px;
+      font-size: 28px;
+    }
+  }
+
+  &__item-desc,
+  &__item-location {
+    color: #94a3b8;
+  }
+
+  &__item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  &__item-status {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:active {
+      transform: scale(0.95);
+      opacity: 0.9;
+    }
+  }
+
+  &__item-actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__action-btn {
+    background: #f1f5f9;
+    color: #64748b;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 24px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:active {
+      background: #e2e8f0;
+      transform: scale(0.95);
+    }
+    
+    &--delete {
+      background: #fee2e2;
+      color: #ef4444;
+      
+      &:active {
+        background: #fecaca;
+      }
+    }
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 40px;
+    text-align: center;
+    
+    .empty-icon {
+      font-size: 80px;
+      margin-bottom: 30px;
+      opacity: 0.5;
+    }
+    
+    .empty-text {
+      font-size: 32px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+  }
+
+  &__add-btn {
+    position: fixed;
+    bottom: 180px; // 调整添加按钮位置，避免被 tabBar 遮挡
+    right: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 99;
+    
+    &:active {
+      transform: scale(0.95);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    }
+  }
+}

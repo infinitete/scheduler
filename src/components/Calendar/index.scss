@@ -1,0 +1,132 @@
+.calendar {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__arrow {
+    font-size: 40px;
+    color: #667eea;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 12px;
+
+    &:active {
+      background: rgba(102, 126, 234, 0.1);
+      transform: scale(0.9);
+    }
+  }
+
+  &__weekdays {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  &__weekday {
+    flex: 1;
+    text-align: center;
+    font-size: 26px;
+    color: #9ca3af;
+    font-weight: 500;
+  }
+
+  &__days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 0 6px;
+  }
+
+  &__day {
+    width: calc((100% - 24px) / 7);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 16px;
+
+    &:active {
+      transform: scale(0.92);
+    }
+
+    &--other-month {
+      .calendar__day-text {
+        color: #d1d5db;
+      }
+    }
+
+    &--today {
+      .calendar__day-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+    }
+
+    &--has-schedule {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+      
+      &:active {
+        background: linear-gradient(135deg, #c7d2fe 0%, #e9d5ff 100%);
+      }
+    }
+  }
+
+  &__day-text {
+    font-size: 28px;
+    color: #374151;
+    font-weight: 500;
+  }
+
+  &__day-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    min-width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  }
+
+  &__day-badge-text {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+}

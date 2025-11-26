@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "scheduler",
+  "appid": "wx6f63bc90b290af8e",
+  "setting": {
+    "es6": true,
+    "minified": false
+  }
+}

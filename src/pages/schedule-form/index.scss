@@ -1,0 +1,293 @@
+.schedule-form {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 30px 30px 120px; // 调整底部边距，避免被 tabBar 遮挡
+
+  &__section {
+    background: #ffffff;
+    margin-bottom: 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:active {
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.12);
+    }
+  }
+
+  &__field {
+    padding: 32px;
+    border-bottom: 2px solid #f3f4f6;
+    transition: border-color 0.3s;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:focus-within {
+      border-bottom-color: #667eea;
+    }
+  }
+
+  &__label {
+    font-size: 28px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &--required::before {
+      content: '*';
+      color: #ef4444;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1f2937;
+    padding: 20px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    background: #f9fafb;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    min-height: 80px;
+    line-height: 1.5;
+
+    &::placeholder {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    &:focus {
+      border-color: #667eea;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1f2937;
+    padding: 20px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    background: #f9fafb;
+    min-height: 200px;
+    line-height: 1.6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+
+    &:focus {
+      border-color: #667eea;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+  }
+
+  &__picker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:active {
+      border-color: #667eea;
+      background: #ffffff;
+      transform: scale(0.98);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+
+    .value {
+      font-size: 32px;
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .placeholder {
+      font-size: 32px;
+      font-weight: 400;
+      color: #9ca3af;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: #6b7280;
+      transition: transform 0.3s;
+    }
+
+    .icon {
+      font-size: 36px;
+      filter: grayscale(0.2);
+    }
+  }
+
+  &__priority-options {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  &__priority-btn {
+    flex: 1;
+    padding: 24px 20px;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 30px;
+    font-weight: 500;
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 3px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &:active:not(&--active) {
+      transform: scale(0.95);
+    }
+
+    &--active {
+      font-weight: 700;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &--high {
+      &.schedule-form__priority-btn--active {
+        background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+        color: #ffffff;
+        border-color: transparent;
+      }
+    }
+
+    &--medium {
+      &.schedule-form__priority-btn--active {
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        color: #ffffff;
+        border-color: transparent;
+      }
+    }
+
+    &--low {
+      &.schedule-form__priority-btn--active {
+        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        color: #ffffff;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__switch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    transition: all 0.3s;
+
+    &:active {
+      background: #ffffff;
+      border-color: #667eea;
+    }
+
+    .schedule-form__label {
+      margin-bottom: 0;
+    }
+
+    switch {
+      transform: scale(1.2);
+    }
+  }
+
+  &__buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    padding: 0 4px;
+  }
+
+  &__submit-btn {
+    flex: 1.2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    font-size: 34px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &::after {
+      content: '✓';
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 32px;
+      opacity: 0.8;
+    }
+
+    &:active {
+      transform: scale(0.97);
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__cancel-btn {
+    flex: 0.8;
+    background: #ffffff;
+    color: #6b7280;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    font-size: 34px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:active {
+      transform: scale(0.97);
+      background: #f3f4f6;
+      border-color: #9ca3af;
+      color: #1f2937;
+    }
+  }
+}
